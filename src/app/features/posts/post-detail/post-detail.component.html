@@ -1,0 +1,152 @@
+<div class="container my-4">
+  <div class="mb-3">
+    <button class="btn btn-outline-secondary" [routerLink]="['/posts']">
+      <i class="fas fa-arrow-left me-2"></i>Back to Posts
+    </button>
+  </div>
+  <ng-container *ngIf="post$ | async as post; else loadingOrNotFound">
+    <div class="card shadow-sm mb-4" *ngIf="post">
+      <img
+        *ngIf="post.postImage"
+        [src]="post.postImage"
+        class="card-img-top"
+        style="max-height: 500px; object-fit: cover"
+        [alt]="post.postDescription"
+      />
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <ng-container *ngIf="user$ | async as user">
+            <div class="d-flex align-items-center" *ngIf="user">
+              <img
+                *ngIf="user.image"
+                [src]="user.image"
+                [alt]="user.name"
+                class="rounded-circle me-2"
+                style="width: 40px; height: 40px; object-fit: cover"
+              />
+              <div
+                *ngIf="!user.image"
+                class="rounded-circle me-2 bg-secondary d-flex align-items-center justify-content-center text-white fw-bold"
+                style="width: 40px; height: 40px"
+              >
+                {{ user.name ? user.name.charAt(0).toUpperCase() : "U" }}
+              </div>
+              <div>
+                <div class="fw-bold">{{ user.name }}</div>
+                <small class="text-muted">{{ "@" + user.username }}</small>
+                <div *ngIf="post.createdAt" class="ms-auto text-muted small">
+                  {{ post.createdAt | date : "medium" }}
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <div class="btn-group">
+            <button
+              class="btn btn-sm btn-outline-primary"
+              (click)="onEdit(post)"
+              title="Edit Post"
+            >
+              <i class="fas fa-edit"></i>
+            </button>
+            <button
+              class="btn btn-sm btn-outline-danger"
+              (click)="onDelete(post)"
+              title="Delete Post"
+            >
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        <p class="card-text">{{ post.postDescription }}</p>
+        <button
+          (click)="toggleLike(post)"
+          [class.btn-primary]="post.isLiked"
+          [class.btn-outline-primary]="!post.isLiked"
+          class="btn w-100 mb-2"
+        >
+          <i
+            class="fa-heart me-2"
+            [class.fas]="post.isLiked"
+            [class.far]="!post.isLiked"
+          ></i>
+          {{ post.isLiked ? "Unlike" : "Like" }}
+        </button>
+        <textarea
+          class="form-control mt-2"
+          placeholder="Write a comment..."
+          [(ngModel)]="comment"
+          name="comment"
+          rows="2"
+        ></textarea>
+        <button
+          class="btn btn-success w-100 mt-1"
+          (click)="addComment()"
+          [disabled]="!comment.trim()"
+        >
+          Comment
+        </button>
+      </div>
+      <ng-container *ngIf="comments$ | async as comments">
+        <div class="card-footer" *ngIf="comments.length > 0">
+          <h6>Comments:</h6>
+          <ul class="list-group list-group-flush">
+            <li
+              class="list-group-item border-0 mb-3 shadow-sm rounded"
+              *ngFor="let singleComment of comments$ | async"
+            >
+              <div class="d-flex align-items-start">
+                <img
+                  [src]="
+                    singleComment.user?.image ||
+                    'https://via.placeholder.com/40'
+                  "
+                  alt="{{ singleComment.user?.username || 'User' }}'s avatar"
+                  class="rounded-circle me-3"
+                  style="width: 40px; height: 40px; object-fit: cover"
+                  onError="this.src='https://via.placeholder.com/40'"
+                />
+                <div class="flex-grow-1">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="mb-0 fw-bold d-inline-block">
+                        {{ singleComment.user?.name || "Anonymous User" }}
+                      </h6>
+                      <span class="text-muted fw-normal ms-1">
+                        {{
+                          "@" +
+                            (singleComment.user?.username ||
+                              singleComment.userId)
+                        }}
+                      </span>
+                    </div>
+                    <small class="text-muted">{{
+                      singleComment.createdAt | date : "mediumDate"
+                    }}</small>
+                  </div>
+                  <p class="mt-2 mb-0">{{ singleComment.text }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="card-footer text-muted"
+          *ngIf="!comments$ || comments.length === 0"
+        >
+          No comments yet.
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <ng-template #loadingOrNotFound>
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Loading post details...</p>
+    </div>
+  </ng-template>
+</div>

@@ -1,25 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './components/card/card.component';
-import { NavComponent } from './components/nav/nav.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { MyCardsComponent } from './components/my-cards/my-cards.component';
+import { NavComponent } from './layout/nav/nav.component';
+import { FooterComponent } from './layout/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NewPostComponent } from './components/new-post/new-post.component';
+import { PostsModule } from './features/posts/posts.module';
+import { AuthModule } from './features/auth/auth.module'; // Import AuthModule
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
     NavComponent,
-    FooterComponent,
-    MyCardsComponent,
-    NewPostComponent,
+    FooterComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    FormsModule, 
+    ReactiveFormsModule,
+    HttpClientModule,
+    PostsModule,
+    AuthModule             // Add AuthModule to imports
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

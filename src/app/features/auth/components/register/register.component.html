@@ -1,0 +1,112 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Create Account</h3>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="John Doe"
+                formControlName="name"
+                [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+              />
+              <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']">Full name is required</div>
+              </div>
+            </div>
+
+            <!-- Username -->
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="johndoe"
+                formControlName="username"
+                [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+              />
+              <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                <div *ngIf="f['username'].errors['required']">Username is required</div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="name@example.com"
+                formControlName="email"
+                [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+              />
+              <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+              />
+              <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+                <div *ngIf="f['password'].errors['minlength']">
+                  Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                formControlName="confirmPassword"
+                [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+              />
+              <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
+                <div *ngIf="f['confirmPassword'].errors['required']">
+                  Confirm Password is required
+                </div>
+                <div *ngIf="f['confirmPassword'].errors['matching']">
+                  Passwords must match
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+            <div *ngIf="registrationError" class="alert alert-danger mt-3">
+              {{ registrationError }}
+            </div>
+          </form>
+          <div class="text-center mt-3">
+            <p>Already have an account? <a [routerLink]="['/auth/login']">Login here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

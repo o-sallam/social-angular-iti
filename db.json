@@ -1,0 +1,211 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "postDescription": "Enjoying the sunset at the beach 🌅",
+      "postImage": "https://imgs.search.brave.com/VHaL8qHP-KjWtDPxWni6Zk9jyWeOcZiw-19R9W-HZ0c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvZGlm/ZmVyZW50LXRvbWF0/by1mcnVpdHMtb3V0/ZG9vci1waG90b3No/b290LXE0azYwcnBo/bXRuZjdldzQuanBn",
+      "isLiked": true,
+      "createdAt": "2023-06-01T10:30:00.000Z",
+      "user": {
+        "id": "1",
+        "name": "Ahmed Khaled",
+        "username": "ahmedkhaled",
+        "email": "ahmed@example.com",
+        "image": "https://randomuser.me/api/portraits/men/32.jpg"
+      }
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "postDescription": "Had an amazing coffee this morning ☕",
+      "postImage": "https://imgs.search.brave.com/2UgW7QUYniVuMfiSOPLJUllk-WMipsfTpTkZe86rDtM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvZGVza3RvcC1s/c2prcjZ3ZzdjdHE5/N3F2LmpwZw",
+      "isLiked": true,
+      "createdAt": "2023-06-02T08:15:00.000Z"
+    },
+    {
+      "id": "3",
+      "userId": 3,
+      "postDescription": "Working hard or hardly working? 😅",
+      "postImage": "https://imgs.search.brave.com/GeweRwBKOVP8aP3iPPu0juFS4CVJ8fHoi77-baMS9gE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzY3LzU2Lzgw/LzM2MF9GXzI2NzU2/ODA1MF9nS2tjQkFJ/NVhrcEVITnBpcGt4/MmFJYXJOYndhckNS/Ti5qcGc",
+      "isLiked": true,
+      "createdAt": "2023-06-03T14:45:00.000Z"
+    },
+    {
+      "id": "4",
+      "userId": 4,
+      "postDescription": "Nature is the best therapy 🍃",
+      "postImage": "https://imgs.search.brave.com/6b4tGb-ISHucgim_sz0dfpvEOltQ6SwwBEoIB0E6BOs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNC8w/Ny8wNi8xMy81NS9j/YWxjdWxhdG9yLTM4/NTUwNl82NDAuanBn",
+      "isLiked": false,
+      "createdAt": "2023-06-04T16:20:00.000Z",
+      "user": {
+        "id": "4",
+        "name": "Sara Youssef",
+        "username": "sarayoussef",
+        "email": "sara@example.com",
+        "image": "https://randomuser.me/api/portraits/women/67.jpg"
+      }
+    },
+    {
+      "id": "5",
+      "userId": "bb09",
+      "postDescription": "Friday mood! 🎉",
+      "postImage": "https://imgs.search.brave.com/6b4tGb-ISHucgim_sz0dfpvEOltQ6SwwBEoIB0E6BOs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNC8w/Ny8wNi8xMy81NS9j/YWxjdWxhdG9yLTM4/NTUwNl82NDAuanBn",
+      "isLiked": false,
+      "createdAt": "2023-06-05T11:10:00.000Z",
+      "user": {
+        "id": "5",
+        "name": "Omar Salah",
+        "username": "omarsalah",
+        "email": "omar@example.com",
+        "image": "https://randomuser.me/api/portraits/men/54.jpg"
+      }
+    },
+    {
+      "id": "bcfd",
+      "userId": 1,
+      "postDescription": "welcome to ploto",
+      "postImage": "https://imgs.search.brave.com/3Sg8tqbeD9Hj48Umd70YsmS0IzKQ5hdO1pUNSzSu6ms/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzE1LzEwLzM5/LzM2MF9GXzMxNTEw/Mzk2OF9aTVdHWnhz/TG5BR3QyellLMFV0/UUVESTR1WVh6SzU0/ay5qcGc",
+      "isLiked": true,
+      "createdAt": "2023-06-05T11:10:00.000Z",
+      "user": {
+        "id": "1",
+        "name": "Ahmed Khaled",
+        "username": "ahmedkhaled",
+        "email": "ahmed@example.com",
+        "image": "https://randomuser.me/api/portraits/men/32.jpg"
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Ahmed Khaled",
+      "username": "ahmedkhaled",
+      "email": "ahmed@example.com",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Fatma Hassan",
+      "username": "fathassan",
+      "email": "fatma@example.com",
+      "image": "https://randomuser.me/api/portraits/women/45.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Mohamed Adel",
+      "username": "mohamedadel",
+      "email": "mohamed@example.com",
+      "image": "https://randomuser.me/api/portraits/men/12.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Sara Youssef",
+      "username": "sarayoussef",
+      "email": "sara@example.com",
+      "image": "https://randomuser.me/api/portraits/women/67.jpg"
+    },
+    {
+      "id": "bb09",
+      "name": "Eng Waleed",
+      "username": "waleed",
+      "email": "waleed@gmail.com",
+      "password": "Waleed",
+      "image": "assets/user-default.webp"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c1",
+      "postId": "1",
+      "userId": "5",
+      "text": "nice tomato",
+      "createdAt": "2023-06-01T11:00:00.000Z"
+    },
+    {
+      "id": "c2",
+      "postId": "5",
+      "userId": "1",
+      "text": "hello man",
+      "createdAt": "2023-06-05T12:00:00.000Z"
+    },
+    {
+      "id": "b953",
+      "postId": 1,
+      "userId": null,
+      "text": "nice tomato",
+      "createdAt": "2025-06-04T22:29:33.118Z"
+    },
+    {
+      "id": "c5e9",
+      "postId": 1,
+      "userId": null,
+      "text": "nice",
+      "createdAt": "2025-06-04T22:29:56.974Z"
+    },
+    {
+      "id": "d4b7",
+      "postId": 2,
+      "userId": null,
+      "text": "wooow",
+      "createdAt": "2025-06-04T22:31:04.975Z"
+    },
+    {
+      "id": "ef4d",
+      "postId": 2,
+      "userId": null,
+      "text": "se",
+      "createdAt": "2025-06-04T22:31:09.055Z"
+    },
+    {
+      "id": "5f27",
+      "postId": 2,
+      "userId": null,
+      "text": "ok",
+      "createdAt": "2025-06-04T22:31:21.168Z"
+    },
+    {
+      "id": "3882",
+      "postId": 1,
+      "userId": null,
+      "text": "شيسبشيسصب",
+      "createdAt": "2025-06-04T22:39:30.781Z"
+    },
+    {
+      "id": "9444",
+      "postId": 1,
+      "userId": null,
+      "text": "hello\n",
+      "createdAt": "2025-06-04T23:05:32.339Z"
+    },
+    {
+      "id": "4311",
+      "postId": 2,
+      "userId": null,
+      "text": "hosam",
+      "createdAt": "2025-06-04T23:14:16.642Z"
+    },
+    {
+      "id": "0313",
+      "postId": 1,
+      "userId": null,
+      "text": "شسيبشسيب",
+      "createdAt": "2025-06-04T23:16:38.530Z"
+    },
+    {
+      "id": "bd8d",
+      "postId": 1,
+      "userId": null,
+      "text": "omar sallam tomato",
+      "createdAt": "2025-06-04T23:16:55.667Z"
+    },
+    {
+      "id": "7b6d",
+      "postId": 1,
+      "userId": "bb09",
+      "text": "hala",
+      "createdAt": "2025-06-04T23:24:20.576Z"
+    }
+  ]
+}

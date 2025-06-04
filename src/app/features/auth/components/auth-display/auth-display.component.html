@@ -1,0 +1,45 @@
+<ng-container *ngIf="currentUser$ | async as user; else guestView">
+  <li class="nav-item dropdown">
+    <a
+      class="nav-link dropdown-toggle d-flex align-items-center"
+      href="#"
+      id="navbarDropdownUserLinkAuthDisplay"
+      role="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <img
+        [src]="user.image || defaultAvatarUrl"
+        alt="User Avatar"
+        class="rounded-circle me-2"
+        style="width: 30px; height: 30px; object-fit: cover"
+      />
+      {{ user.name || user.username }}
+    </a>
+    <ul
+      class="dropdown-menu dropdown-menu-end"
+      aria-labelledby="navbarDropdownUserLinkAuthDisplay"
+    >
+      <li><a class="dropdown-item" [routerLink]="['/profile']">Profile</a></li>
+      <!-- Placeholder for profile page -->
+      <li><hr class="dropdown-divider" /></li>
+      <li><button class="dropdown-item" (click)="logout()">Logout</button></li>
+    </ul>
+  </li>
+</ng-container>
+
+<ng-template #guestView>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/auth/login']" routerLinkActive="active"
+      >Login</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      [routerLink]="['/auth/register']"
+      routerLinkActive="active"
+      >Register</a
+    >
+  </li>
+</ng-template>

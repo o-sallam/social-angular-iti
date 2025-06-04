@@ -1,0 +1,25 @@
+<div class="user-list">
+  <h2>Users</h2>
+  <div *ngIf="users.length === 0">No users found.</div>
+  <table *ngIf="users.length > 0" class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn btn-primary" [routerLink]="['/users', user.id]">View</button>
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
