@@ -1,0 +1,8 @@
+<div class="container my-4">
+  <div class="row row-cols-3">
+    <div class="col" *ngFor="let post of postService.posts">
+      <app-card [post]="post"></app-card>
+    </div>
+    <app-new-post></app-new-post>
+  </div>
+</div>

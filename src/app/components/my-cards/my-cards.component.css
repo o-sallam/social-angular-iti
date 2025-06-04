@@ -1,0 +1,8 @@
+.my-cards {
+  min-height: 60vh;
+  display: flex;
+  gap: 30px;
+  padding: 45px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
